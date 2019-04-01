@@ -1,3 +1,10 @@
+/*
+ * ReadTest
+*
+ * v.0.1
+ *
+ * Copyright© Not working
+ */
 package readertest;
 
 import org.junit.Test;
@@ -20,14 +27,13 @@ public class ReadTest {
     @Parameter(1)
     String m2;
 
-
-    // creates the test data
+   // creates the test data
     @Parameters
     public static Collection<Object[]> data() {
         Object[][] data = new Object[][] { { "trak.jpg" ,"C:/Hegga/sample.txt", "" }, { "", "C:/Hegga/copy.txt", "15452" } };
         return Arrays.asList(data);
     }
-
+  //error 
 
     @Test
     public void ReaderTestException() {
