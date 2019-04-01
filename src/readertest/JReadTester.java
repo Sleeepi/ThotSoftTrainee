@@ -1,5 +1,5 @@
 /*
- * ReadTest
+ * JReadTester
 *
  * v.0.1
  *
@@ -19,7 +19,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.runners.Parameterized.*;
 
 @RunWith(Parameterized.class)
-public class ReadTest {
+public class JReadTester {
 
     // fields used together with @Parameter must be public
     @Parameter(0)
@@ -36,7 +36,7 @@ public class ReadTest {
   //error 
 
     @Test
-    public void ReaderTestException() {
+    public void ReaderTesterException() {
         ReaderTest tester = new ReaderTest();
         assertEquals(tester.ReaderMethod(m1, m2));
     }
