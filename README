@@ -1,0 +1,11 @@
+/////////////////////////
+THOTSOFTTRAINEE
+////////////////////////
+Irj egy parancssori alkalmazast amit Maven-nel le tudsz forditani. 
+Allitson elo egy futtathato (executable) JAR-t. 
+A programnak ket bemenete legyen. Az elso parameter egy fajl utvonal. A program olvassa 
+be ezt mint szovegfajl es irja vissza a konzolra (java.lang.System.out). 
+Ha a masodik parameter is meg van adva akkor az ebben megadott fajlba 
+irja ki a beolvasott fajl tartalmat. Tehát tulajdonkeppen egy copy 
+parancsnak feleljen meg.
+/////////////////////////////////////v.0.1
