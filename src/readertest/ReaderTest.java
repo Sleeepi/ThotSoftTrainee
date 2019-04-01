@@ -29,7 +29,7 @@ public class ReaderTest {
 		System.out.println("No. Just press the enter.");
 		Scanner input2 =new Scanner(System.in);
 		String filename2 = input2.nextLine();
-		System.out.println("Your filename is "+ filename);
+		System.out.println("Your filename is "+ filename2);
 
 		//String filename = "C:/Hegga/sample.txt";
 		//String filename2 = "";
