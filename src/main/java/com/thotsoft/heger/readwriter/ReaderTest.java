@@ -22,6 +22,31 @@ public class ReaderTest {
 		
 	read(args[0],args[1]);
 	
+	//UnderDevelopment
+	/*System.out.println("Write your filename here.");
+	Scanner input = new Scanner(System.in);
+	String filename = input.nextLine();
+	System.out.println("Your filename is" + filename);
+	File myFile = new File (filename);
+	 if (!myFile.exists()) {
+         System.out.println("Not Found");
+         Thread.sleep(2000);
+     }
+	    
+	System.out.println("Would you like to copy the first file data to another file?");
+	System.out.println("Yes: Please write another output.");
+	System.out.println("No. Just press the enter.");
+	Scanner input2 =new Scanner(System.in);
+	String filename2 = input2.nextLine();
+	System.out.println("Your filename is "+ filename2);
+	//String filename = "C:/Hegga/sample.txt";
+	//String filename2 = "";
+	/*ReaderMethod(filename, filename2);
+	
+	ReaderMethod("C:/Hegga/sample.txt", "");
+	ReaderMethod("", "");
+	ReaderMethod("C:/Hegga/sample1.txt", "C:/Hegga/342342.txt");
+	ReaderMethod("C:/Hegga/tara1.txt", ""); */
 		
 
 	}
