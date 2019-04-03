@@ -16,44 +16,55 @@ public class ReaderTest {
 	}
 	
 	*/
+
+	public static void main (String[] args) throws Exception {
+		
+		
+	//ReaderTest myObject = new ReaderTest();  
+		
+	/*System.out.println("Write your filename here.");
+	Scanner input = new Scanner(System.in);
+	String filename = input.nextLine();
+	System.out.println("Your filename is" + filename);
+	File myFile = new File (filename);
+	 if (!myFile.exists()) {
+         System.out.println("Not Found");
+         Thread.sleep(2000);
+     }
+	    
+	System.out.println("Would you like to copy the first file data to another file?");
+	System.out.println("Yes: Please write another output.");
+	System.out.println("No. Just press the enter.");
+	Scanner input2 =new Scanner(System.in);
+	String filename2 = input2.nextLine();
+	System.out.println("Your filename is "+ filename2);
+	//String filename = "C:/Hegga/sample.txt";
+	//String filename2 = "";
+	/*ReaderMethod(filename, filename2);
 	
-	public static void main (String[] args) {
-		
-		System.out.println("Write your filename here.");
-		Scanner input = new Scanner(System.in);
-		String filename = input.nextLine();
-		System.out.println("Your filename is" + filename);
-
-		System.out.println("Would you like to copy the first file data to another file?");
-		System.out.println("Yes: Please write another output.");
-		System.out.println("No. Just press the enter.");
-		Scanner input2 =new Scanner(System.in);
-		String filename2 = input2.nextLine();
-		System.out.println("Your filename is "+ filename2);
-
-		//String filename = "C:/Hegga/sample.txt";
-		//String filename2 = "";
-
-		ReaderMethod(filename, filename2);
-		
+	ReaderMethod("C:/Hegga/sample.txt", "");
+	ReaderMethod("", "");
+	ReaderMethod("C:/Hegga/sample1.txt", "C:/Hegga/342342.txt");
+	ReaderMethod("C:/Hegga/tara1.txt", ""); */
 	}
 
-private static void ReaderMethod(String filename, String filename2) {
+public void ReaderMethod(String filename, String filename2) {
 	
 	if(filename2.length()==0) {
 			File myFile = new File (filename);
 			Scanner myReader;
 			try {
-				myReader = new Scanner (myFile);
+					myReader = new Scanner (myFile);
 	
-				while (myReader.hasNextLine()) {
-					String text = myReader.nextLine();
-					System.out.println(text);
+					while (myReader.hasNextLine()) {
+						String text = myReader.nextLine();
+						System.out.println(text);
+					}
+					myReader.close();
+				} catch (FileNotFoundException e) {
+		
+					System.out.println("File not found.");
 				}
-				myReader.close();
-			} catch (FileNotFoundException e) {
-				System.out.println("File not found.");
-			}
 
 	}else {
 		File myFile = new File (filename);
@@ -61,7 +72,7 @@ private static void ReaderMethod(String filename, String filename2) {
 		try {
 			myReader = new Scanner (myFile);
 			while(myReader.hasNextLine()) {
-				String text = myReader.nextLine();					
+				String text = myReader.nextLine();									
 				try { 
 				      FileWriter myWriter = new FileWriter(filename2);
 				      myWriter.write(text);
@@ -74,8 +85,8 @@ private static void ReaderMethod(String filename, String filename2) {
 			}
 		
 		}catch (FileNotFoundException e) {
-			System.out.println("File not found.");
-		}			
+			System.out.println("File not found."); 
+		}				 
 	}
 }
 }
