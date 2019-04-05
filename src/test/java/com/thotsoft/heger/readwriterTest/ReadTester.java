@@ -30,14 +30,14 @@ class ReadTester extends TestCase {
 		System.out.println("JUnit version is: " + Version.id());
 		
     }
-	@Test
+
 	public void testReaderMethodWithEmptyString() {
 	    String name = "";
 	    
 	    ReaderTest.read(name, name);
 	    
 	}
-	@Test
+	
 	public void testReaderMethodWithNotText() {
 		String szam = "34234234234";
 		ReaderTest.read(szam, szam);
