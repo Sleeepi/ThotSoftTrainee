@@ -10,7 +10,7 @@ import java.util.*;
 public class ReaderTest {
 
     public static void main (String[] args) throws Exception {
-//args		
+//args
         try {
             if (args[0].length()== 0) {
             System.out.println("Not a parameter.");
@@ -31,7 +31,7 @@ public class ReaderTest {
                             Scanner sc = new Scanner(System.in);
                             String choice = sc.nextLine();
                                 if (choice.contains("Yes") || choice.contains("yes")) {
-                                    System.out.println("Type your file location");	
+                                    System.out.println("Type your file location");
                                     String target = sc.nextLine();
                                     sc.close();
                                 } else {
@@ -63,7 +63,7 @@ public class ReaderTest {
 
     public static void read(String source, String target) {
 
-        if(target.length()==0) {
+        if(target.length()== 0) {
             File myFile = new File (source);
             Scanner myReader;
             try {
@@ -78,11 +78,11 @@ public class ReaderTest {
             } //ArrayIndexOutOfBound exception
         } else {
             File myFile= new File (source);
-            Scanner myReader;		
+            Scanner myReader;
             try {
                 myReader = new Scanner (myFile);
                 while(myReader.hasNextLine()) {
-                String text = myReader.nextLine();									
+                String text = myReader.nextLine();
                     try { 
                         FileWriter myWriter = new FileWriter(target);
                         myWriter.write(text);
