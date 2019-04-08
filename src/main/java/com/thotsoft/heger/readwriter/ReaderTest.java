@@ -22,41 +22,41 @@ public class ReaderTest {
 			} else {
 				if(!args[1].contains(".txt")) {
 				System.out.println("Wrong extension!");
-			} else {
-				if(args[2] != "--target"){
-					read(args[1],"");
-					Thread.sleep(3000);
-					System.out.println("Wrong/Missing target Command!");
-					Thread.sleep(3000);
-					System.out.println("Do you want to copy? Yes/No");
-					Scanner sc = new Scanner(System.in);
-					String choice = sc.nextLine();
-						if (choice.contains("Yes") || choice.contains("yes")) {
-							System.out.println("Type your file location");	
-							String target = sc.nextLine();
-							sc.close();
-						}else {
-							System.out.println("Thanks");
-							read(args[1],"");
-						}
-					read(args[1], args[3]);
-				}else {
-				//target--wrong extension
-					if(!args[3].contains(".txt")) {
-					System.out.println("Wrong extension!");
-					Thread.sleep(3000);
-					System.out.println("You can write it manually, if you want..");
-					Scanner fileinput = new Scanner(System.in);
-					String addtargetpath = fileinput.nextLine();
-					fileinput.close();
-					read(args[1],addtargetpath);
+				} else {
+					if(args[2] != "--target"){
+						read(args[1],"");
+						Thread.sleep(3000);
+						System.out.println("Wrong/Missing target Command!");
+						Thread.sleep(3000);
+						System.out.println("Do you want to copy? Yes/No");
+						Scanner sc = new Scanner(System.in);
+						String choice = sc.nextLine();
+							if (choice.contains("Yes") || choice.contains("yes")) {
+								System.out.println("Type your file location");	
+								String target = sc.nextLine();
+								sc.close();
+							}else {
+								System.out.println("Thanks");
+								read(args[1],"");
+							}
+						read(args[1], args[3]);
 					}else {
-						read(args[1],args[3]);
+					//target--wrong extension
+						if(!args[3].contains(".txt")) {
+						System.out.println("Wrong extension!");
+						Thread.sleep(3000);
+						System.out.println("You can write it manually, if you want..");
+						Scanner fileinput = new Scanner(System.in);
+						String addtargetpath = fileinput.nextLine();
+						fileinput.close();
+						read(args[1],addtargetpath);
+						}else {
+							read(args[1],args[3]);
+						}
 					}
 				}
 			}
-		}
-	}	
+		}	
 }
 	
 
@@ -73,8 +73,8 @@ public static void read(String source, String target) {
 			}
 		myReader.close();
 		} catch (FileNotFoundException e) {
-	System.out.println("File not found.");
-} //ArrayIndexOutOfBound exception
+			System.out.println("File not found.");
+		} //ArrayIndexOutOfBound exception
 	}else {
 		File myFile = new File (source);
 		Scanner myReader;		
@@ -87,12 +87,11 @@ public static void read(String source, String target) {
 				myWriter.write(text);
 				myWriter.close();
 				System.out.println("Success.");
-				} catch (IOException e) {
+			} catch (IOException e) {
 					System.out.println("IO-Error");
 					e.printStackTrace();
 				}				
 			}
-
 		}catch (FileNotFoundException e) {
 			System.out.println("File not found."); 
 		}				 
