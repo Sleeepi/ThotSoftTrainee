@@ -34,12 +34,12 @@ public class ReaderTest {
 									System.out.println("Type your file location");	
 									String target = sc.nextLine();
 									sc.close();
-								}else {
+								} else {
 									System.out.println("Thanks");
 									read(args[1], "");
 								}
 							read(args[1], args[3]);
-						}else {
+						} else {
 						//target--wrong extension
 							if(!args[3].contains(".txt")) {
 							System.out.println("Wrong extension!");
@@ -49,7 +49,7 @@ public class ReaderTest {
 							String addtargetpath = fileinput.nextLine();
 							fileinput.close();
 							read(args[1], addtargetpath);
-							}else {
+							} else {
 								read(args[1], args[3]);
 							}
 						}
@@ -58,7 +58,7 @@ public class ReaderTest {
 			}
 		} catch (ArrayIndexOutOfBoundsException e) {
 				System.out.println("You didn't type a parameter.");
-			}
+		}
 }
 	
 public static void read(String source, String target) {
@@ -76,7 +76,7 @@ public static void read(String source, String target) {
 			} catch (FileNotFoundException e) {
 				System.out.println("File not found.");
 			} //ArrayIndexOutOfBound exception
-		}else {
+		} else {
 			File myFile= new File (source);
 			Scanner myReader;		
 			try {
@@ -93,7 +93,7 @@ public static void read(String source, String target) {
 						e.printStackTrace();
 					}				
 				}
-			}catch (FileNotFoundException e) {
+			} catch (FileNotFoundException e) {
 				System.out.println("File not found."); 
 			}				 
 		}
