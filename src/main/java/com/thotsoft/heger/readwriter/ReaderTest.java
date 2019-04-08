@@ -11,56 +11,55 @@ public class ReaderTest {
 
 
 	public static void main (String[] args) throws Exception {
-		
 //args		
-	try {
-		if (args[0].length()== 0) {
-		System.out.println("Not a parameter.");
-		} else {
-		//source command
-			if(args[1]!= "--source") {
-				System.out.println("Wrong Command!");
+		try {
+			if (args[0].length()== 0) {
+			System.out.println("Not a parameter.");
 			} else {
-				if(!args[1].contains(".txt")) {
-				System.out.println("Wrong extension!");
+			//source command
+				if(args[1]!= "--source") {
+					System.out.println("Wrong Command!");
 				} else {
-					if(args[2] != "--target"){
-						read(args[1],"");
-						Thread.sleep(3000);
-						System.out.println("Wrong/Missing target Command!");
-						Thread.sleep(3000);
-						System.out.println("Do you want to copy? Yes/No");
-						Scanner sc = new Scanner(System.in);
-						String choice = sc.nextLine();
-							if (choice.contains("Yes") || choice.contains("yes")) {
-								System.out.println("Type your file location");	
-								String target = sc.nextLine();
-								sc.close();
-							}else {
-								System.out.println("Thanks");
-								read(args[1],"");
-							}
-						read(args[1], args[3]);
-					}else {
-					//target--wrong extension
-						if(!args[3].contains(".txt")) {
-						System.out.println("Wrong extension!");
-						Thread.sleep(3000);
-						System.out.println("You can write it manually, if you want..");
-						Scanner fileinput = new Scanner(System.in);
-						String addtargetpath = fileinput.nextLine();
-						fileinput.close();
-						read(args[1],addtargetpath);
+					if(!args[1].contains(".txt")) {
+					System.out.println("Wrong extension!");
+					} else {
+						if(args[2]!= "--target"){
+							read(args[1],"");
+							Thread.sleep(3000);
+							System.out.println("Wrong/Missing target Command!");
+							Thread.sleep(3000);
+							System.out.println("Do you want to copy? Yes/No");
+							Scanner sc = new Scanner(System.in);
+							String choice = sc.nextLine();
+								if (choice.contains("Yes") || choice.contains("yes")) {
+									System.out.println("Type your file location");	
+									String target = sc.nextLine();
+									sc.close();
+								}else {
+									System.out.println("Thanks");
+									read(args[1], "");
+								}
+							read(args[1], args[3]);
 						}else {
-							read(args[1],args[3]);
+						//target--wrong extension
+							if(!args[3].contains(".txt")) {
+							System.out.println("Wrong extension!");
+							Thread.sleep(3000);
+							System.out.println("You can write it manually, if you want..");
+							Scanner fileinput = new Scanner(System.in);
+							String addtargetpath = fileinput.nextLine();
+							fileinput.close();
+							read(args[1], addtargetpath);
+							}else {
+								read(args[1], args[3]);
+							}
 						}
 					}
 				}
 			}
-		}
-	} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("You didn't type a parameter.");
-		}
+		} catch (ArrayIndexOutOfBoundsException e) {
+				System.out.println("You didn't type a parameter.");
+			}
 }
 	
 
