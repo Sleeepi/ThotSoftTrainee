@@ -13,6 +13,7 @@ public class ReaderTest {
 	public static void main (String[] args) throws Exception {
 		
 //args		
+try {
 	if (args[0].length()== 0) {
 	System.out.println("Not a parameter.");
 	} else {
@@ -56,7 +57,10 @@ public class ReaderTest {
 				}
 			}
 		}
-	}	
+	}
+}catch (ArrayIndexOutOfBoundsException e) {
+		System.out.println("You didn't type the parameter.");
+}
 }
 	
 
