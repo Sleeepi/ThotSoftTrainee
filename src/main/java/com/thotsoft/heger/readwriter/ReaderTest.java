@@ -31,8 +31,7 @@ public class ReaderTest {
                             String choice = sc.nextLine();
                                 if (choice.contains("Yes") || choice.contains("yes")) {
                                     System.out.println("Type your file location");
-                                    String target = sc.nextLine();
-                                    
+                                    String target = sc.nextLine();                                  
                                     sc.close();
                                 } else {
                                     System.out.println("Thanks");
@@ -65,16 +64,17 @@ public class ReaderTest {
 
         if (target.length() == 0) {
             File myFile = new File (source);
-            Scanner myReader;
+            Scanner myReader = null;
             try {
                 myReader = new Scanner (myFile);
                 while (myReader.hasNextLine()) {
                     String text = myReader.nextLine();
                     System.out.println(text);
                 }
-                myReader.close();
             } catch (FileNotFoundException e) {
                 System.out.println("File not found.");
+            } finally {
+                myReader.close();
             }
         } else {
             File myFile= new File (source);
@@ -84,15 +84,17 @@ public class ReaderTest {
                 FileWriter myWriter = new FileWriter(target);
                 while (myReader.hasNextLine()) {
                     String text = myReader.nextLine();
-                    
                     myWriter.write(text);
                     myWriter.write(System.getProperty("line.separator"));
                     myWriter.flush();
-                } System.out.println("Success.");
-                  myWriter.close();  
+                } 
+                  System.out.println("Success.");
+                  myWriter.close();
             } catch (FileNotFoundException e) {
                 System.out.println("File not found."); 
+            } finally {
+                
             }
         } 
-    }
+    } 
 }
