@@ -83,14 +83,14 @@ public static void read(String source, String target) {
 				myReader = new Scanner (myFile);
 				while(myReader.hasNextLine()) {
 				String text = myReader.nextLine();									
-				try  { 
-					FileWriter myWriter = new FileWriter(target);
-					myWriter.write(text);
-					myWriter.close();
-					System.out.println("Success.");
-				} catch (IOException e) {
-						System.out.println("IO-Error");
-						e.printStackTrace();
+					try  { 
+						FileWriter myWriter = new FileWriter(target);
+						myWriter.write(text);
+						myWriter.close();
+						System.out.println("Success.");
+					} catch (IOException e) {
+							System.out.println("IO-Error");
+							e.printStackTrace();
 					}				
 				}
 			} catch (FileNotFoundException e) {
