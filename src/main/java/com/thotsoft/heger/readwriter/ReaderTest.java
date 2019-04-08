@@ -9,7 +9,6 @@ import java.util.*;
 
 public class ReaderTest {
 
-
 	public static void main (String[] args) throws Exception {
 //args		
 		try {
@@ -62,7 +61,6 @@ public class ReaderTest {
 			}
 }
 	
-
 public static void read(String source, String target) {
 	
 		if(target.length()==0) {
