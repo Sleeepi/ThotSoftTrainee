@@ -10,7 +10,7 @@ public class ReaderTest {
 
     public static void main(String[] args) throws Exception {
 
-        String targetpath = null;
+        String targetpath = "";
 
         if (args.length < 4) {
             throw new IllegalArgumentException("Exactly 4 parameters required !");
@@ -47,9 +47,12 @@ public class ReaderTest {
             Thread.sleep(3000);
             System.out.println("You can write it manually, if you want..");
             Scanner fileinput = new Scanner(System.in);
-            String addtargetpath = fileinput.nextLine();
-            fileinput.close();
-            read(args[1], addtargetpath);
+            try {
+                String addtargetpath = fileinput.nextLine();
+                read(args[1], addtargetpath);
+            } finally {
+                fileinput.close();
+            }
         } else {
             read(args[1], args[3]);
         }
