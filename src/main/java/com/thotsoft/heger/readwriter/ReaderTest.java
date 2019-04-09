@@ -15,7 +15,7 @@ public class ReaderTest {
         if (args.length < 4) {
             throw new IllegalArgumentException("Exactly 4 parameters required !");
         }
-        if (!args[0].contains("--source")) {
+        if (!args[0].contains("--source") && args[0].equalsIgnoreCase("--source")) {
             // source command
             System.out.println("Wrong Command!");
         } else if (!args[1].contains(".txt")) {
