@@ -1,11 +1,14 @@
 /////////////////////////
 THOTSOFTTRAINEE
 ////////////////////////
-Irj egy parancssori alkalmazast amit Maven-nel le tudsz forditani. 
-Allitson elo egy futtathato (executable) JAR-t. 
-A programnak ket bemenete legyen. Az elso parameter egy fajl utvonal. A program olvassa 
-be ezt mint szovegfajl es irja vissza a konzolra (java.lang.System.out). 
-Ha a masodik parameter is meg van adva akkor az ebben megadott fajlba 
-irja ki a beolvasott fajl tartalmat. Tehát tulajdonkeppen egy copy 
-parancsnak feleljen meg.
-/////////////////////////////////////v.0.1
+This is a CommandLineApplication, which you can build with Maven and create an executable jar file. 
+The application has 2 parameters, one is the input and the other one is the output.
+Functions: 
+-If you add only the source parameter, then write it to the CommandLineInterface.
+(java.lang.System.out). 
+-If you add the second parameter, then the applicaton copies the first file content into the other file.
+/////////////////////////////////////v.0.2
+with args4j parser
+usable function.
+-s --source
+-o --output
