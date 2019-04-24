@@ -17,8 +17,11 @@ public class Cliwrite {
 
         try {
             parser.parseArgument(args);
-        } catch (CmdLineException e) {
-            System.exit(1);
+        } catch( CmdLineException e ) {
+            System.err.println(e.getMessage());
+            System.err.println("Invalid Argument");
+            parser.printUsage(System.err);
+            return;
         }
         if (values.getOutput() == null) {
             read(values.getSource(), "");

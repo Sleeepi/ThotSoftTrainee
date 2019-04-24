@@ -1,7 +1,9 @@
 package main.java.com.thotsoft.heger.cliwrite;
 
-import org.kohsuke.args4j.CmdLineException;
-import org.kohsuke.args4j.CmdLineParser;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.kohsuke.args4j.Argument;
 import org.kohsuke.args4j.Option;
 
 public class CommandLineOptions {
@@ -14,22 +16,14 @@ public class CommandLineOptions {
         usage = "Output File", metaVar = "<some/directory/file.txt>")
     private String output;
     
-    @Option(name = "-h", aliases = { "--help" },
-            usage = "Output File", metaVar = "<some/directory/file.txt>")
+    @Option(name = "-h", aliases = { "--help" } ,
+        usage = "helper")
+    
+    @Argument
+    private List<String> arguments = new ArrayList<String>();
+
 
     private boolean errorFree = false;
-
-    public void CommandLineValues(String... args) {
-        CmdLineParser parser = new CmdLineParser(this);
-        try {
-            parser.parseArgument(args);
-
-            errorFree = true;
-        } catch (CmdLineException e) {
-            System.err.println(e.getMessage());
-            parser.printUsage(System.err);
-        }
-    }
 
     public boolean isErrorFree() {
         return errorFree;
