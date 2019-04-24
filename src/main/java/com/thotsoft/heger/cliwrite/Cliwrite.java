@@ -17,7 +17,7 @@ public class Cliwrite {
 
         try {
             parser.parseArgument(args);
-        } catch( CmdLineException e ) {
+        } catch (CmdLineException e) {
             System.err.println(e.getMessage());
             System.err.println("Invalid Argument");
             parser.printUsage(System.err);

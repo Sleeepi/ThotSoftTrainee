@@ -15,13 +15,12 @@ public class CommandLineOptions {
     @Option(name = "-o", aliases = { "--output" },
         usage = "Output File", metaVar = "<some/directory/file.txt>")
     private String output;
-    
-    @Option(name = "-h", aliases = { "--help" } ,
+
+    @Option(name = "-h", aliases = { "--help" },
         usage = "helper")
-    
+
     @Argument
     private List<String> arguments = new ArrayList<String>();
-
 
     private boolean errorFree = false;
 
