@@ -1,4 +1,4 @@
-package main.java.com.thotsoft.heger.cliwrite;
+package com.thotsoft.heger.cliwrite;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -49,7 +49,7 @@ public class Cliwrite {
                     myReader.close();
                 }
             } else
-                System.err.println("Invalid argument. Valid filepath required");
+                System.err.println("Invalid argument. Valid file required");
 
         } else if (output.contains(".txt")){
             File myFile = new File(source);

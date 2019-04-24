@@ -1,4 +1,4 @@
-package main.java.com.thotsoft.heger.cliwrite;
+package com.thotsoft.heger.cliwrite;
 
 import java.util.ArrayList;
 import java.util.List;
