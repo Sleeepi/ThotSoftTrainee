@@ -49,9 +49,9 @@ public class Cliwrite {
                     myReader.close();
                 }
             } else
-                System.out.println("Not a file");
+                System.err.println("Invalid argument. Valid filepath required");
 
-        } else {
+        } else if (output.contains(".txt")){
             File myFile = new File(source);
             if (myFile.isFile()) {
                 Scanner myReader = null;
@@ -75,6 +75,8 @@ public class Cliwrite {
                 }
             } else
                 System.out.println("Not a file");
+        }else {
+            System.err.println("Invalid extension .txt required");
         }
     }
 }
