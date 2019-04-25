@@ -32,51 +32,55 @@ public class Cliwrite {
     }
 
     public static void read(String source, String output) throws IOException {
-
-        if (output.length() == 0) {
-            File myFile = new File(source);
-            if (myFile.isFile()) {
-                Scanner myReader = null;
-                try {
-                    myReader = new Scanner(myFile);
-                    while (myReader.hasNextLine()) {
-                        String text = myReader.nextLine();
-                        System.out.println(text);
+        if (!source.equals(output)) {
+            if (output.length() == 0) {
+                File myFile = new File(source);
+                if (myFile.isFile()) {
+                    Scanner myReader = null;
+                    try {
+                        myReader = new Scanner(myFile);
+                        while (myReader.hasNextLine()) {
+                            String text = myReader.nextLine();
+                            System.out.println(text);
+                        }
+                    } catch (FileNotFoundException e) {
+                        System.out.println("File not found.");
+                    } finally {
+                        myReader.close();
                     }
-                } catch (FileNotFoundException e) {
-                    System.out.println("File not found.");
-                } finally {
-                    myReader.close();
-                }
-            } else
-                System.err.println("Invalid argument. Valid file required");
+                } else
+                    System.err.println("Invalid argument. Valid file required");
 
-        } else if (output.contains(".txt")){
-            File myFile = new File(source);
-            if (myFile.isFile()) {
-                Scanner myReader = null;
-                FileWriter myWriter = null;
-                try {
-                    myReader = new Scanner(myFile);
-                    myWriter = new FileWriter(output);
-                    while (myReader.hasNextLine()) {
-                        String text = myReader.nextLine();
-                        myWriter.write(text);
-                        myWriter.write(System.getProperty("line.separator"));
-                        myWriter.flush();
+            } else if (output.contains(".txt")) {
+                File myFile = new File(source);
+                if (myFile.isFile()) {
+                    Scanner myReader = null;
+                    FileWriter myWriter = null;
+                    try {
+                        myReader = new Scanner(myFile);
+                        myWriter = new FileWriter(output);
+                        while (myReader.hasNextLine()) {
+                            String text = myReader.nextLine();
+                            myWriter.write(text);
+                            myWriter.write(System.getProperty("line.separator"));
+                            myWriter.flush();
+                        }
+                        System.out.println("Success.");
+                        myWriter.close();
+                    } catch (FileNotFoundException e) {
+                        System.out.println("File not found.");
+                    } finally {
+                        myReader.close();
+                        myWriter.close();
                     }
-                    System.out.println("Success.");
-                    myWriter.close();
-                } catch (FileNotFoundException e) {
-                    System.out.println("File not found.");
-                } finally {
-                    myReader.close();
-                    myWriter.close();
-                }
-            } else
-                System.out.println("Not a file");
-        }else {
-            System.err.println("Invalid extension .txt required");
+                } else
+                    System.out.println("Not a file");
+            } else {
+                System.err.println("Invalid extension .txt required");
+            }
+        } else {
+            System.err.println("Invalid path.");
         }
     }
+
 }
